@@ -1,0 +1,282 @@
+/* ============================================
+   FEAST TOGETHER - Responsive Styles
+   Breakpoints: 1024px, 768px, 480px
+   ============================================ */
+
+/* --- Tablet (max 1024px) --- */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 100px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* --- Mobile (max 768px) --- */
+@media (max-width: 768px) {
+  /* Navbar Mobile */
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    padding: 24px;
+    gap: 4px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 12px 16px;
+    width: 100%;
+  }
+
+  .btn-nav {
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  /* Hamburger Animation */
+  .nav-toggle.active .hamburger {
+    background: transparent;
+  }
+
+  .nav-toggle.active .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .nav-toggle.active .hamburger::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  /* Hero */
+  .hero {
+    min-height: auto;
+    padding: 100px 5% 40px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-illustration {
+    width: 250px;
+    height: 250px;
+  }
+
+  .plate {
+    font-size: 3.5rem;
+  }
+
+  /* Sections */
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 32px;
+  }
+
+  .features {
+    padding: 60px 5%;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .cta {
+    padding: 60px 5%;
+  }
+
+  .cta h2 {
+    font-size: 1.6rem;
+  }
+
+  /* Page Layout */
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+
+  /* Forms */
+  .form-container {
+    padding: 24px;
+    margin: 0 16px;
+  }
+
+  /* Search */
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .search-bar input {
+    min-width: auto;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Recipe Grid */
+  .recipe-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Footer */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* Modal */
+  .modal {
+    padding: 24px;
+    width: 95%;
+  }
+
+  /* Shopping List */
+  .shopping-item {
+    padding: 8px 12px;
+  }
+
+  /* Group Cards */
+  .group-card-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .group-card-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Toast */
+  .toast {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    text-align: center;
+  }
+}
+
+/* --- Small Mobile (max 480px) --- */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-lg {
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
+
+  .hero-illustration {
+    width: 200px;
+    height: 200px;
+  }
+
+  .plate {
+    font-size: 3rem;
+  }
+
+  .feature-card {
+    padding: 24px 16px;
+  }
+
+  .container {
+    padding: 16px 4% 40px;
+  }
+
+  .page-header {
+    padding: 30px 4% 12px;
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* --- Print Styles (for shopping list) --- */
+@media print {
+  .navbar,
+  .footer,
+  .btn,
+  .nav-toggle {
+    display: none !important;
+  }
+
+  .page-container {
+    padding-top: 0;
+  }
+
+  .shopping-item {
+    break-inside: avoid;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+  }
+}

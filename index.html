@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feast Together - Plan Meals for Group Gatherings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Feast Together</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="pages/search.html" class="nav-link">Search Recipes</a></li>
+        <li><a href="pages/mealplan.html" class="nav-link">Meal Plans</a></li>
+        <li><a href="pages/shopping.html" class="nav-link">Shopping List</a></li>
+        <li><a href="pages/group.html" class="nav-link">Group Profiles</a></li>
+        <li id="authNav">
+          <a href="pages/login.html" class="nav-link btn-nav">Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero fade-in">
+    <div class="hero-content">
+      <h1 class="hero-title slide-up">Plan Perfect Meals <br><span class="highlight">Together</span></h1>
+      <p class="hero-subtitle slide-up delay-1">Seamlessly plan group meals that cater to everyone's dietary needs. 
+        Find recipes, create meal plans, and generate shopping lists — all in one place.</p>
+      <div class="hero-buttons slide-up delay-2">
+        <a href="pages/search.html" class="btn btn-primary pulse-hover">Explore Recipes</a>
+        <a href="pages/group.html" class="btn btn-secondary">Create a Group</a>
+      </div>
+    </div>
+    <div class="hero-image slide-in-right">
+      <div class="hero-illustration">
+        <div class="plate plate-1 float-animation">🍝</div>
+        <div class="plate plate-2 float-animation delay-1">🥗</div>
+        <div class="plate plate-3 float-animation delay-2">🍰</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <h2 class="section-title">How It Works</h2>
+    <div class="features-grid">
+      <div class="feature-card fade-in-up">
+        <div class="feature-icon">👥</div>
+        <h3>Create a Group</h3>
+        <p>Set up a profile for your gathering — specify group size, dietary restrictions, and meal themes.</p>
+      </div>
+      <div class="feature-card fade-in-up delay-1">
+        <div class="feature-icon">🔍</div>
+        <h3>Find Recipes</h3>
+        <p>Search thousands of recipes by cuisine, diet, or ingredients using the Spoonacular API.</p>
+      </div>
+      <div class="feature-card fade-in-up delay-2">
+        <div class="feature-icon">📋</div>
+        <h3>Build a Meal Plan</h3>
+        <p>Combine appetizers, main courses, and desserts into a cohesive meal plan for your group.</p>
+      </div>
+      <div class="feature-card fade-in-up delay-3">
+        <div class="feature-icon">🛒</div>
+        <h3>Generate Shopping List</h3>
+        <p>Automatically create an organized shopping list categorized by store section.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="cta-content fade-in">
+      <h2>Ready to Plan Your Next Feast?</h2>
+      <p>Join Feast Together and make hosting group meals effortless and enjoyable.</p>
+      <a href="pages/register.html" class="btn btn-primary btn-lg pulse-hover">Get Started Free</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Feast Together</span>
+        <p>Making group meals seamless and enjoyable.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/search.html">Search Recipes</a></li>
+          <li><a href="pages/mealplan.html">Meal Plans</a></li>
+          <li><a href="pages/shopping.html">Shopping List</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="pages/login.html">Login</a></li>
+          <li><a href="pages/register.html">Register</a></li>
+          <li><a href="pages/group.html">Group Profiles</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Feast Together. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

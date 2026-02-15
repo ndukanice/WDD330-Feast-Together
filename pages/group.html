@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Group Profiles - Feast Together</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Feast Together</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="search.html" class="nav-link">Search Recipes</a></li>
+        <li><a href="mealplan.html" class="nav-link">Meal Plans</a></li>
+        <li><a href="shopping.html" class="nav-link">Shopping List</a></li>
+        <li><a href="group.html" class="nav-link active">Group Profiles</a></li>
+        <li id="authNav">
+          <a href="login.html" class="nav-link btn-nav">Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-container page-transition">
+    <div class="page-header">
+      <h1>Group Profiles</h1>
+      <p>Create profiles for your gatherings to get personalized meal suggestions</p>
+    </div>
+
+    <div class="container">
+      <!-- Create Group Button -->
+      <div class="text-center mb-4 fade-in">
+        <button class="btn btn-primary btn-lg pulse-hover" onclick="openGroupModal()">
+          + Create New Group
+        </button>
+      </div>
+
+      <!-- Groups List -->
+      <div id="groupsList">
+        <div class="empty-state fade-in delay-1">
+          <div class="empty-icon">👥</div>
+          <h3>No Groups Yet</h3>
+          <p>Create your first group profile to get personalized meal recommendations for your gathering.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create/Edit Group Modal -->
+  <div class="modal-overlay" id="groupModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="groupModalTitle">Create New Group</h2>
+        <button class="modal-close" onclick="closeGroupModal()">&times;</button>
+      </div>
+      <form id="groupForm">
+        <input type="hidden" id="groupId" value="">
+        <div class="form-group">
+          <label for="groupName">Group Name</label>
+          <input type="text" id="groupName" placeholder="e.g., Friday Night Dinner Club" required>
+        </div>
+        <div class="form-group">
+          <label for="groupSize">Group Size</label>
+          <input type="number" id="groupSize" placeholder="Number of guests" min="1" max="50" required>
+        </div>
+        <div class="form-group">
+          <label for="groupDiet">Dietary Restrictions</label>
+          <select id="groupDiet" multiple style="min-height: 120px;">
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="gluten-free">Gluten Free</option>
+            <option value="dairy-free">Dairy Free</option>
+            <option value="nut-free">Nut Free</option>
+            <option value="ketogenic">Ketogenic</option>
+            <option value="paleo">Paleo</option>
+            <option value="pescetarian">Pescetarian</option>
+          </select>
+          <small style="color: var(--neutral-mid); font-size: 0.8rem;">Hold Ctrl/Cmd to select multiple</small>
+        </div>
+        <div class="form-group">
+          <label for="groupTheme">Meal Theme</label>
+          <select id="groupTheme">
+            <option value="">No specific theme</option>
+            <option value="italian">Italian Night</option>
+            <option value="mexican">Mexican Fiesta</option>
+            <option value="asian">Asian Fusion</option>
+            <option value="mediterranean">Mediterranean</option>
+            <option value="american">American Classic</option>
+            <option value="indian">Indian Cuisine</option>
+            <option value="french">French Bistro</option>
+            <option value="brunch">Brunch</option>
+            <option value="bbq">BBQ / Grill</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="groupNotes">Additional Notes</label>
+          <textarea id="groupNotes" placeholder="Any allergies, preferences, or special requests..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Save Group</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 Feast Together. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/group.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>
