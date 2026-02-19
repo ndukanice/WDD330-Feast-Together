@@ -218,29 +218,30 @@
 
 /* --- Scroll-triggered animations (JS-activated) --- */
 .animate-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: opacity 0.6s ease, transform 0.6s ease !important;
+  animation: none !important;
 }
 
 .animate-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 /* Feature cards & fade-in-up: hidden until JS adds .visible on scroll */
 .feature-card,
 .fade-in-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  animation: none; /* override the immediate CSS animation */
+  opacity: 0 !important;
+  transform: translateY(40px) !important;
+  transition: opacity 0.6s ease, transform 0.6s ease !important;
+  animation: none !important;
 }
 
 .feature-card.visible,
 .fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .feature-card.visible.delay-1,

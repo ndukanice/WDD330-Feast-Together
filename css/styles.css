@@ -337,7 +337,7 @@ img {
   border-radius: var(--radius);
   text-align: center;
   box-shadow: var(--shadow);
-  transition: var(--transition);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
 }
 
 .feature-card:hover {

@@ -26,21 +26,27 @@ document.addEventListener('DOMContentLoaded', () => {
   // === Update Auth Navigation ===
   Auth.updateNav();
 
-  // === Scroll-triggered Animations ===
-  const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.animate-on-scroll, .feature-card, .fade-in-up');
-    const windowHeight = window.innerHeight;
+  // === Scroll-triggered Animations (IntersectionObserver) ===
+  const animatedElements = document.querySelectorAll('.animate-on-scroll, .feature-card, .fade-in-up');
 
-    elements.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < windowHeight * 0.85) {
-        el.classList.add('visible');
-      }
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // stop watching once visible
+        }
+      });
+    }, { threshold: 0.15 });
+
+    // Delay observer setup so browser paints the hidden state first
+    requestAnimationFrame(() => {
+      animatedElements.forEach(el => observer.observe(el));
     });
-  };
-
-  window.addEventListener('scroll', Utils.debounce(animateOnScroll, 50));
-  animateOnScroll(); // Run once on load
+  } else {
+    // Fallback for very old browsers
+    animatedElements.forEach(el => el.classList.add('visible'));
+  }
 
   // === Navbar Scroll Effect ===
   const navbar = document.getElementById('navbar');
